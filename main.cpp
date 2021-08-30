@@ -8,6 +8,6 @@ int main() {
 	GLFW glfw;
 	Engine engine("Non Euclidian Engine", 1280, 720);
 	engine.loop();
-//adaw
+//qwdwadqdd
 	return 0;
 }
