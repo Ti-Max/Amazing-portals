@@ -23,6 +23,7 @@ void Character::setPxController(PxController* ctrl)
 
 void Character::move(const vec3& move, float dt)
 {
+	cout << dt << endl;
 	PxVec3 PxMove(move.x, move.y, move.z);
 	ctrl->move(PxMove, 0, dt, filters);
 }

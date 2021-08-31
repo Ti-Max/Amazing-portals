@@ -18,6 +18,7 @@ public:
 	void setCharacter(Character* player) { this->player = player; }
 private:
 	vec2 getInputAxis(float dt);
+	vec2 getInput();
 	Character* player;
 	bool keys[348];
 	

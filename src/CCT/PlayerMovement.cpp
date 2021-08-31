@@ -2,7 +2,7 @@
 
 PlayerMovement::PlayerMovement()
 {
-	speed = 0.005;
+	speed = 5;
 	oldInput = vec2(0);
 }
 
@@ -64,11 +64,12 @@ void PlayerMovement::doMovement(float dt)
 {
 	vec3 movement(0);
 	//smooth axis
-	vec2 axis = getInputAxis(dt);
+	vec2 axis = getInput();
+	//vec2 axis = getInputAxis(dt);
 	//minus here because of left-Handed Coordinate Systems
 	movement = vec3(-axis.x, 0, axis.y);
 	//cout << "input is:" << axis.x << " and " << axis.y << endl;
-	player->move(movement* speed, dt);
+	player->move(movement*( speed *dt), dt);
 }
 
 vec2 PlayerMovement::getInputAxis(float dt)
@@ -175,4 +176,27 @@ vec2 PlayerMovement::getInputAxis(float dt)
 	}
 	return oldInput;
 	//return oldInput;
+}
+
+vec2 PlayerMovement::getInput()
+{
+	vec2 input;
+	if (keys[GLFW_KEY_A])
+	{
+		input.x = -1;
+	}
+	if (keys[GLFW_KEY_D])
+	{
+		input.x = 1;
+	}
+	if (keys[GLFW_KEY_S])
+	{
+		input.y = -1;
+	}
+	if (keys[GLFW_KEY_W])
+	{
+		input.y = 1;
+	}
+
+	return input;
 }
