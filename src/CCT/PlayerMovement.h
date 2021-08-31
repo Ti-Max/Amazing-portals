@@ -10,7 +10,7 @@
 class PlayerMovement
 {
 public:
-	float speed = 1;
+	float speed = 10;
 	PlayerMovement();
 	void checkKeys(int key, int action);
 	void checkMouse(float xpos, float ypos);
@@ -18,6 +18,7 @@ public:
 	void setCharacter(Character* player) { this->player = player; }
 private:
 	vec2 getInputAxis(float dt);
+	vec2 getInput();
 	Character* player;
 	bool keys[348];
 	
