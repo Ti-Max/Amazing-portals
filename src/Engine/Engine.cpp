@@ -59,7 +59,7 @@ Engine::Engine(const std::string& title, int width, int height)
 	glViewport(0, 0, widthPX, heightPX);
 
 	//Вертикальная синхронизация, vsync
-	glfwSwapInterval(0);
+	glfwSwapInterval(1);
 }
 Engine::~Engine()
 {

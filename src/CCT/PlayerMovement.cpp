@@ -2,7 +2,11 @@
 
 PlayerMovement::PlayerMovement()
 {
+<<<<<<< HEAD
 	speed = 0.05;
+=======
+	speed = 5;
+>>>>>>> 8c6eaa114092792b4cfd309ad1d408764f7f9d5d
 	oldInput = vec2(0);
 }
 
@@ -26,17 +30,55 @@ void PlayerMovement::checkKeys(int key, int action)
 
 	}
 }
+<<<<<<< HEAD
 
 
+=======
+//
+//void PlayerMovement::checkMouse(float xpos, float ypos)
+//{
+//	if (firstMouse)
+//	{
+//		lastX = xpos;
+//		lastY = ypos;
+//		firstMouse = false;
+//	}
+//
+//	float xoffset = xpos - lastX;
+//	float yoffset = lastY - ypos;
+//	lastX = xpos;
+//	lastY = ypos;
+//
+//	float sensitivity = 0.05;
+//	xoffset *= sensitivity;
+//	yoffset *= sensitivity;
+//
+//	yaw += xoffset;
+//	pitch += yoffset;
+//
+//	if (pitch > 89.0f)
+//		pitch = 89.0f;
+//	if (pitch < -89.0f)
+//		pitch = -89.0f;
+//
+//	glm::vec3 front;
+//	front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+//	front.y = sin(glm::radians(pitch));
+//	front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+//	this->front = glm::normalize(front);
+//	
+//}
+>>>>>>> 8c6eaa114092792b4cfd309ad1d408764f7f9d5d
 void PlayerMovement::doMovement(float dt)
 {
 	vec3 movement(0);
 	//smooth axis
-	vec2 axis = getInputAxis(dt);
+	vec2 axis = getInput();
+	//vec2 axis = getInputAxis(dt);
 	//minus here because of left-Handed Coordinate Systems
 	movement = vec3(-axis.x, 0, axis.y);
 	//cout << "input is:" << axis.x << " and " << axis.y << endl;
-	player->move(movement* speed, dt);
+	player->move(movement*( speed *dt), dt);
 }
 
 vec2 PlayerMovement::getInputAxis(float dt)
@@ -142,11 +184,37 @@ vec2 PlayerMovement::getInputAxis(float dt)
 		return normalazedInput;
 	}
 	return oldInput;
+<<<<<<< HEAD
 	return vec2();
 
+=======
+	//return oldInput;
+>>>>>>> 8c6eaa114092792b4cfd309ad1d408764f7f9d5d
 }
 
 vec2 PlayerMovement::getInput()
 {
+<<<<<<< HEAD
 	return vec2();
+=======
+	vec2 input;
+	if (keys[GLFW_KEY_A])
+	{
+		input.x = -1;
+	}
+	if (keys[GLFW_KEY_D])
+	{
+		input.x = 1;
+	}
+	if (keys[GLFW_KEY_S])
+	{
+		input.y = -1;
+	}
+	if (keys[GLFW_KEY_W])
+	{
+		input.y = 1;
+	}
+
+	return input;
+>>>>>>> 8c6eaa114092792b4cfd309ad1d408764f7f9d5d
 }

@@ -113,7 +113,7 @@ void Camera::do_movement()
 	quat rotation = xRot * yRot;
 	offset = rotation * offset;
 	pos = offset + followedTransform->p;
-	cout << "YAW: " << yaw << endl;
+	//cout << "YAW: " << yaw << endl;
 }
 
 glm::mat4 Camera::getViewMat()
