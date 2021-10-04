@@ -2,11 +2,7 @@
 
 PlayerMovement::PlayerMovement()
 {
-<<<<<<< HEAD
-	speed = 0.05;
-=======
 	speed = 5;
->>>>>>> 8c6eaa114092792b4cfd309ad1d408764f7f9d5d
 	oldInput = vec2(0);
 }
 
@@ -30,10 +26,6 @@ void PlayerMovement::checkKeys(int key, int action)
 
 	}
 }
-<<<<<<< HEAD
-
-
-=======
 //
 //void PlayerMovement::checkMouse(float xpos, float ypos)
 //{
@@ -68,7 +60,6 @@ void PlayerMovement::checkKeys(int key, int action)
 //	this->front = glm::normalize(front);
 //	
 //}
->>>>>>> 8c6eaa114092792b4cfd309ad1d408764f7f9d5d
 void PlayerMovement::doMovement(float dt)
 {
 	vec3 movement(0);
@@ -184,19 +175,11 @@ vec2 PlayerMovement::getInputAxis(float dt)
 		return normalazedInput;
 	}
 	return oldInput;
-<<<<<<< HEAD
-	return vec2();
-
-=======
 	//return oldInput;
->>>>>>> 8c6eaa114092792b4cfd309ad1d408764f7f9d5d
 }
 
 vec2 PlayerMovement::getInput()
 {
-<<<<<<< HEAD
-	return vec2();
-=======
 	vec2 input;
 	if (keys[GLFW_KEY_A])
 	{
@@ -216,5 +199,4 @@ vec2 PlayerMovement::getInput()
 	}
 
 	return input;
->>>>>>> 8c6eaa114092792b4cfd309ad1d408764f7f9d5d
 }
