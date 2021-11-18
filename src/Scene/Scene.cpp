@@ -86,7 +86,11 @@ void Scene::draw(glm::mat4 projection, glm::mat4 view, float deltaTime, bool dra
 		//Draw the Portal View
 		for (int i = 0; i < 2; i++)
 			if (ShouldIdrawAPortal[i])
+<<<<<<< HEAD
 				portals[i]->renderInsides(projection, view, 15, this, camera->fov);
+=======
+				portals[i]->renderInsides(projection, view, 5, this, camera->fov);
+>>>>>>> bf762f326dfc36b9211e68c7770c01c3d1e7919e
 		//Draw main scene
 		drawMainScene(projection, view, ShouldIdrawAPortal[0], ShouldIdrawAPortal[1]);
 	}

@@ -10,7 +10,7 @@
 class PlayerMovement
 {
 public:
-	float speed = 1;
+	float speed = 10;
 	PlayerMovement();
 	void checkKeys(int key, int action);
 	void checkMouse(float xpos, float ypos);
