@@ -144,26 +144,26 @@ void Engine::loop()
 	scene.addObject("floor", floor);
 
 	int i = 0;
-	//for (int x = 0; x < 2; x+=1)
-	//{
-	//	for (int y = 0; y < 3; y+=1)
-	//	{
-	//		for (int z = 0; z < 1; z+=1)
-	//		{
-	//			Object* cube = new Object;
-	//			RenderObjcect* cubeRO = new RenderObjcect(meshesData["cube"], orange_wal.id);
-	//			cube->setRenderObject(cubeRO);
+	for (int x = -4; x < 1; x+=1)
+	{
+		for (int y = 0; y < 2; y+=1)
+		{
+		//	for (int z = -2; z < 1; z+=1)
+		//	{
+				Object* cube = new Object;
+				RenderObjcect* cubeRO = new RenderObjcect(meshesData["cube"], orange_wal.id);
+				cube->setRenderObject(cubeRO);
 
-	//			PhysicsObject* cubePh = new PhysicsObject(phScene, DYNAMIC);
-	//			cubePh->setMass(10);
-	//			cubePh->setShapeBox();
-	//			cube->setPhysicsObject(cubePh);
-	//			cube->setTransform(Transform(glm::vec3(x, (y+5), z), vec3(1)));
+				PhysicsObject* cubePh = new PhysicsObject(phScene, DYNAMIC);
+				cubePh->setMass(10);
+				cubePh->setShapeBox();
+				cube->setPhysicsObject(cubePh);
+				cube->setTransform(Transform(glm::vec3(x, (y+5), 4), vec3(1)));
 
-	//			scene.addObject("cube_" + std::to_string(i++), cube);
-	//		}
-	//	}
-	//}
+				scene.addObject("cube_" + std::to_string(i++), cube);
+			}
+		//}
+	}
 	//Object* cube = new Object;
 	//RenderObjcect cubeRO(meshesData["cube"], box.id);
 	//cube->setRenderObject(&cubeRO);
@@ -208,10 +208,10 @@ void Engine::loop()
 	Model Player_imp("res/models/Bean/Bean.obj");
 	RenderObjcect* Player_RO = new RenderObjcect(&Player_imp);
 	Player->setRenderObject(Player_RO);
-	Player->setTransform(Transform(glm::vec3(0, 2, 0), glm::vec3(0.5)));
+	Player->setTransform(Transform(glm::vec3(0, 2, 7), glm::vec3(0.5)));
 
 	PxControllerManager* manager = PxCreateControllerManager(*phScene->getPxScene());
-	Player->createController(manager, CtrlDesc(glm::vec3(0, 2, -2), 1.5, 0.5, 0.0f));
+	Player->createController(manager, CtrlDesc(glm::vec3(0, 2, -7), 1.5, 0.5, 0.0f));
 	playerMovement.setCharacter(Player);
 	scene.addObject("Player", Player);
 
